@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0f1b2d;
+  --navy-light: #1a2d47;
+  --accent: #f5c518;
+  --accent-hover: #e6b800;
+  --accent-dark: #c99a00;
+  --accent-light: #fef3c7;
+  --background: #ffffff;
+  --foreground: #1a1a2e;
+  --gray-bg: #f8f9fb;
+  --text-muted: #6b7280;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--navy);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
