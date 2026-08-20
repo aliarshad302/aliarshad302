@@ -10,6 +10,8 @@ import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import HeroImage from "@/components/HeroImage";
 import ProjectGallery from "@/components/ProjectGallery";
+import Testimonials from "@/components/Testimonials";
+import CaliforniaMap from "@/components/CaliforniaMap";
 
 const homeFaqs = [
   {
@@ -438,6 +440,8 @@ export default function HomePage() {
 
       <ProcessSteps />
 
+      <Testimonials />
+
       {/* FAQs */}
       <section className="py-16 sm:py-20 bg-[var(--gray-bg)]">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -452,6 +456,8 @@ export default function HomePage() {
           <FAQ faqs={homeFaqs} />
         </div>
       </section>
+
+      <CaliforniaMap />
 
       <CTASection
         headline="Need an Electrician in California?"
