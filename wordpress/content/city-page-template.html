@@ -1,0 +1,101 @@
+<!-- ============================================
+     CITY PAGE TEMPLATE — For Elementor
+     Replace {CITY}, {STATE}, {REGION}, {COUNTY},
+     {POPULATION}, {SLUG} with actual values.
+
+     Create each city as a WordPress PAGE with slug:
+     electrician/{city-slug}
+     ============================================ -->
+
+<!-- SECTION 1: HERO — Navy background -->
+<div style="max-width:700px;">
+  <nav style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:24px;">
+    <a href="/" style="color:rgba(255,255,255,0.6);">Home</a> ›
+    <a href="/service-areas/" style="color:rgba(255,255,255,0.6);">Service Areas</a> ›
+    <span style="color:#f5c518;">{CITY}, {STATE_ABBR}</span>
+  </nav>
+
+  <h1 style="font-size:2.5rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:16px;">
+    Electrician in {CITY}, {STATE_ABBR}
+  </h1>
+  <p style="font-size:1.125rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:32px;">
+    Licensed electricians serving {CITY} and {COUNTY}.
+    24/7 emergency service, panel upgrades, EV charger installation,
+    and full residential and commercial electrical services.
+  </p>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <a href="tel:+18005550199" class="btn-primary">📞 (800) 555-0199</a>
+    <a href="/contact/" class="btn-outline">Request Service</a>
+  </div>
+</div>
+
+
+<!-- SECTION 2: CITY DESCRIPTION — White background -->
+<div style="max-width:800px;">
+  <h2 style="font-size:1.5rem;font-weight:700;color:#0f1b2d;margin-bottom:16px;">
+    Electrician Services in {CITY}
+  </h2>
+  <p style="color:#6b7280;line-height:1.75;">
+    {DESCRIPTION — from cities config}
+  </p>
+  <p style="color:#6b7280;line-height:1.75;margin-top:16px;">
+    {LOCAL_INFO — from cities config}
+  </p>
+</div>
+
+
+<!-- SECTION 3: SERVICES GRID — Gray background, 3-column -->
+<h2 style="text-align:center;font-size:1.5rem;font-weight:700;color:#0f1b2d;margin-bottom:40px;">
+  Electrical Services in {CITY}
+</h2>
+
+<!-- Use Elementor Icon Box widgets linking to each service page -->
+<!-- List top 8 services with links to /services/{slug}/ -->
+
+
+<!-- SECTION 4: COMMON ELECTRICAL ISSUES — White background -->
+<h2 style="font-size:1.5rem;font-weight:700;color:#0f1b2d;margin-bottom:24px;">
+  Common Electrical Issues in {CITY}
+</h2>
+<ul style="list-style:none;padding:0;">
+  <!-- Each item from commonIssues array -->
+  <li style="display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;color:#6b7280;">
+    <span style="color:#f5c518;font-size:18px;">⚡</span>
+    {COMMON_ISSUE_TEXT}
+  </li>
+</ul>
+
+
+<!-- SECTION 5: NEIGHBORHOODS — Gray background -->
+<h2 style="font-size:1.5rem;font-weight:700;color:#0f1b2d;margin-bottom:24px;">
+  Neighborhoods We Serve in {CITY}
+</h2>
+<!-- Use Elementor's Tags or Button Group widget with all neighborhood names -->
+
+
+<!-- SECTION 6: FAQs — White background -->
+<!-- Use Elementor Accordion widget -->
+<h2 style="text-align:center;font-size:1.5rem;font-weight:700;color:#0f1b2d;margin-bottom:40px;">
+  Frequently Asked Questions — {CITY} Electricians
+</h2>
+<!-- Add FAQs from the city config -->
+
+
+<!-- SECTION 7: NEARBY AREAS — Gray background -->
+<h2 style="font-size:1.5rem;font-weight:700;color:#0f1b2d;margin-bottom:24px;">
+  Also Serving Nearby Areas
+</h2>
+<!-- Grid of links to nearby city pages (if they exist) or just city names -->
+
+
+<!-- SECTION 8: CTA — Navy background -->
+<div style="text-align:center;">
+  <h2 style="font-size:1.75rem;font-weight:700;color:#fff;margin-bottom:16px;">
+    Need an Electrician in {CITY}?
+  </h2>
+  <p style="color:rgba(255,255,255,0.8);margin-bottom:32px;">
+    Licensed electricians ready for any residential or commercial project in {CITY} and {COUNTY}.
+  </p>
+  <a href="tel:+18005550199" class="btn-primary">📞 Call Now — (800) 555-0199</a>
+</div>

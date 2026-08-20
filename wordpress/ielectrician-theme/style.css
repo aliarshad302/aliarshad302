@@ -1,0 +1,393 @@
+/*
+Theme Name: iElectrician
+Theme URI: https://ielectrician.org
+Description: Custom child theme for iElectrician - Licensed Electricians Across California. Built for Elementor.
+Author: iElectrician
+Author URI: https://ielectrician.org
+Template: hello-elementor
+Version: 1.0.0
+Text Domain: ielectrician
+*/
+
+/* ========================================
+   CSS Variables / Brand Colors
+   ======================================== */
+:root {
+  --navy: #0f1b2d;
+  --navy-light: #1a2d47;
+  --accent: #f5c518;
+  --accent-hover: #e6b800;
+  --accent-dark: #c99a00;
+  --accent-light: #fef3c7;
+  --background: #ffffff;
+  --foreground: #1a1a2e;
+  --gray-bg: #f8f9fb;
+  --text-muted: #6b7280;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--foreground);
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--navy);
+}
+
+a {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* ========================================
+   Button Styles
+   ======================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent);
+  color: var(--navy);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  color: var(--navy);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--navy);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--navy-light);
+  color: #ffffff;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ========================================
+   Section Backgrounds
+   ======================================== */
+.bg-navy { background-color: var(--navy); }
+.bg-navy-light { background-color: var(--navy-light); }
+.bg-gray { background-color: var(--gray-bg); }
+.bg-white { background-color: #ffffff; }
+
+/* ========================================
+   Trust Bar
+   ======================================== */
+.trust-bar {
+  background-color: var(--gray-bg);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.trust-bar .trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.trust-bar .trust-item strong {
+  color: var(--navy);
+}
+
+/* ========================================
+   Service Cards
+   ======================================== */
+.service-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: rgba(245, 197, 24, 0.3);
+}
+
+.service-card .icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.service-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ========================================
+   Testimonial Cards
+   ======================================== */
+.testimonial-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  transition: box-shadow 0.2s;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-card .stars {
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .review-text {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card .reviewer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.testimonial-card .avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--navy);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.testimonial-card .reviewer-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.testimonial-card .reviewer-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   City / Area Cards
+   ======================================== */
+.city-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.city-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: rgba(245, 197, 24, 0.3);
+}
+
+.city-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.city-card .region {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   FAQ Accordion
+   ======================================== */
+.faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item[open] summary {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faq-item .faq-answer {
+  padding: 1rem 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.9375rem;
+}
+
+/* ========================================
+   Emergency Banner
+   ======================================== */
+.emergency-banner {
+  background-color: #b91c1c;
+  padding: 0.75rem 0;
+  color: #ffffff;
+}
+
+.emergency-banner a {
+  background: #ffffff;
+  color: #b91c1c;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+/* ========================================
+   Article Content Styles
+   ======================================== */
+.article-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.article-content p {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.article-content ul { list-style-type: disc; }
+.article-content ol { list-style-type: decimal; }
+
+.article-content li {
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+.article-content strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* ========================================
+   CTA Section
+   ======================================== */
+.cta-section {
+  background-color: var(--navy);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}

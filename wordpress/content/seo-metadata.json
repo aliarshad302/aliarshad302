@@ -1,0 +1,95 @@
+{
+  "note": "SEO metadata for all pages. Use with RankMath or Yoast SEO plugin.",
+
+  "pages": {
+    "homepage": {
+      "slug": "/",
+      "seo_title": "iElectrician | Licensed Electricians Across California | 24/7 Service",
+      "meta_description": "Professional residential and commercial electrician services throughout California. Licensed, insured, and available 24/7 for emergency electrical work. Call now.",
+      "focus_keyword": "electrician california"
+    },
+    "about": {
+      "slug": "/about/",
+      "seo_title": "About iElectrician | Licensed California Electricians",
+      "meta_description": "iElectrician provides licensed, insured electrician services across California. Professional residential and commercial electrical service with 24/7 emergency availability.",
+      "focus_keyword": "about ielectrician"
+    },
+    "contact": {
+      "slug": "/contact/",
+      "seo_title": "Contact iElectrician | Schedule Electrical Service in California",
+      "meta_description": "Contact iElectrician for licensed electrical services anywhere in California. Call for 24/7 emergency service or schedule a residential or commercial project.",
+      "focus_keyword": "contact electrician california"
+    },
+    "services_hub": {
+      "slug": "/services/",
+      "seo_title": "Electrical Services | iElectrician California",
+      "meta_description": "Complete electrical services across California: emergency repairs, panel upgrades, EV charger installation, rewiring, lighting, and more. Licensed electricians.",
+      "focus_keyword": "electrical services california"
+    },
+    "service_areas": {
+      "slug": "/service-areas/",
+      "seo_title": "Service Areas | iElectrician California Cities",
+      "meta_description": "iElectrician serves cities across California including Los Angeles, San Diego, San Jose, San Francisco, Sacramento, and more. Find a licensed electrician near you.",
+      "focus_keyword": "electrician service areas california"
+    },
+    "california_electrician": {
+      "slug": "/california-electrician/",
+      "seo_title": "California Electrician | Statewide Licensed Electrical Services",
+      "meta_description": "Licensed California electricians for residential and commercial projects. Panel upgrades, emergency repairs, EV chargers, rewiring, and more. Serving all of CA.",
+      "focus_keyword": "california electrician"
+    },
+    "resources": {
+      "slug": "/resources/",
+      "seo_title": "Electrical Resources & Guides | iElectrician",
+      "meta_description": "Helpful guides on electrical safety, panel upgrades, EV charger installation costs, and more from iElectrician's licensed California electricians.",
+      "focus_keyword": "electrical guides california"
+    }
+  },
+
+  "services": [
+    { "slug": "/services/emergency-electrician/", "seo_title": "Emergency Electrician in California | 24/7 Electrical Service", "meta_description": "24/7 emergency electrician services across California. Fast response for power outages, sparking outlets, electrical fires, and dangerous wiring. Call now.", "focus_keyword": "emergency electrician california" },
+    { "slug": "/services/residential-electrician/", "seo_title": "Residential Electrician in California | Home Electrical Services", "meta_description": "Licensed residential electricians serving California homes. Wiring, repairs, panel upgrades, lighting, and safety inspections. Request service today.", "focus_keyword": "residential electrician california" },
+    { "slug": "/services/commercial-electrician/", "seo_title": "Commercial Electrician in California | Business Electrical Services", "meta_description": "Licensed commercial electricians for California businesses. Office wiring, retail lighting, industrial electrical, code compliance, and tenant improvements.", "focus_keyword": "commercial electrician california" },
+    { "slug": "/services/electrical-panel-upgrade/", "seo_title": "Electrical Panel Upgrade in California | 200 Amp Panel Service", "meta_description": "Professional electrical panel upgrades across California. 200-amp upgrades, panel replacements, and code-compliant installations by licensed electricians.", "focus_keyword": "electrical panel upgrade california" },
+    { "slug": "/services/ev-charger-installation/", "seo_title": "EV Charger Installation in California | Home & Commercial EVSE", "meta_description": "Professional EV charger installation across California. Level 2 home and commercial charging stations. Tesla, ChargePoint, and universal EVSE. Licensed electricians.", "focus_keyword": "ev charger installation california" },
+    { "slug": "/services/electrical-repair/", "seo_title": "Electrical Repair in California | Licensed Electricians", "meta_description": "Fast electrical repair services across California. Fix faulty wiring, tripping breakers, flickering lights, dead outlets, and more. Licensed and insured.", "focus_keyword": "electrical repair california" },
+    { "slug": "/services/electrical-wiring/", "seo_title": "Electrical Wiring Services in California | New & Rewiring", "meta_description": "Professional electrical wiring services across California. New construction, rewiring, and upgrades. Code-compliant work by licensed electricians.", "focus_keyword": "electrical wiring california" },
+    { "slug": "/services/house-rewiring/", "seo_title": "House Rewiring in California | Whole Home Electrical Rewire", "meta_description": "Professional house rewiring services across California. Replace outdated wiring, upgrade to modern standards, and protect your home. Licensed electricians.", "focus_keyword": "house rewiring california" },
+    { "slug": "/services/lighting-installation/", "seo_title": "Lighting Installation in California | Indoor & Outdoor", "meta_description": "Professional lighting installation across California. Recessed lighting, landscape lights, LED upgrades, and decorative fixtures. Licensed electricians.", "focus_keyword": "lighting installation california" },
+    { "slug": "/services/ceiling-fan-installation/", "seo_title": "Ceiling Fan Installation in California | Licensed Electricians", "meta_description": "Professional ceiling fan installation across California. New installations, replacements, and wiring by licensed electricians. Schedule service today.", "focus_keyword": "ceiling fan installation california" },
+    { "slug": "/services/generator-installation/", "seo_title": "Generator Installation in California | Standby & Backup Power", "meta_description": "Professional generator installation across California. Whole-home and commercial standby generators with automatic transfer switches. Licensed electricians.", "focus_keyword": "generator installation california" },
+    { "slug": "/services/electrical-safety-inspection/", "seo_title": "Electrical Safety Inspection in California | Home & Commercial", "meta_description": "Professional electrical safety inspections across California. Identify hazards, ensure code compliance, and protect your property. Licensed electricians.", "focus_keyword": "electrical safety inspection california" },
+    { "slug": "/services/circuit-breaker-repair/", "seo_title": "Circuit Breaker Repair in California | Breaker Replacement Service", "meta_description": "Circuit breaker repair and replacement across California. Fix tripping breakers, replace faulty units, and upgrade panels. Licensed electricians.", "focus_keyword": "circuit breaker repair california" },
+    { "slug": "/services/outlet-repair/", "seo_title": "Outlet Repair & GFCI Installation in California | Licensed Electricians", "meta_description": "Professional outlet repair and GFCI installation across California. Kitchen, bathroom, garage, and outdoor outlets. Code-compliant work by licensed electricians.", "focus_keyword": "outlet repair gfci installation california" },
+    { "slug": "/services/whole-house-surge-protection/", "seo_title": "Whole House Surge Protection in California | Panel-Level Protection", "meta_description": "Whole-house surge protection installation across California. Protect electronics and appliances from power surges at the panel level. Licensed electricians.", "focus_keyword": "whole house surge protection california" },
+    { "slug": "/services/smoke-detector-installation/", "seo_title": "Smoke Detector Installation in California | Hardwired & Code-Compliant", "meta_description": "Professional smoke detector installation across California. Hardwired smoke and CO detectors. California code-compliant installations by licensed electricians.", "focus_keyword": "smoke detector installation california" },
+    { "slug": "/services/aluminum-wiring-replacement/", "seo_title": "Aluminum Wiring Replacement in California | Fire Safety Upgrade", "meta_description": "Professional aluminum wiring replacement across California. Replace hazardous aluminum with copper wiring. Reduce fire risk with licensed electricians.", "focus_keyword": "aluminum wiring replacement california" },
+    { "slug": "/services/electrical-troubleshooting/", "seo_title": "Electrical Troubleshooting in California | Diagnose & Fix", "meta_description": "Expert electrical troubleshooting across California. Diagnose flickering lights, power loss, tripping breakers, and more. Licensed electricians.", "focus_keyword": "electrical troubleshooting california" },
+    { "slug": "/services/recessed-lighting/", "seo_title": "Recessed Lighting Installation in California | LED Retrofits", "meta_description": "Professional recessed lighting installation across California. Kitchen, living room, and bathroom can lights. LED retrofits available. Licensed electricians.", "focus_keyword": "recessed lighting installation california" },
+    { "slug": "/services/landscape-lighting/", "seo_title": "Landscape Lighting Installation in California | Outdoor Lighting", "meta_description": "Professional landscape lighting installation across California. Path lights, accent lighting, security lights, and architectural illumination. Licensed electricians.", "focus_keyword": "landscape lighting california" }
+  ],
+
+  "cities": [
+    { "slug": "/electrician/los-angeles-ca/", "seo_title": "Electrician in Los Angeles, CA | 24/7 Licensed Electrical Services", "meta_description": "Licensed electricians serving Los Angeles, CA. 24/7 emergency service, panel upgrades, EV charger installation, rewiring, and residential electrical repairs. Call now.", "focus_keyword": "electrician los angeles" },
+    { "slug": "/electrician/san-diego-ca/", "seo_title": "Electrician in San Diego, CA | Licensed Electrical Services", "meta_description": "Licensed electricians serving San Diego, CA. Emergency service, panel upgrades, EV charger installation, rewiring, and coastal electrical repairs. Call today.", "focus_keyword": "electrician san diego" },
+    { "slug": "/electrician/san-jose-ca/", "seo_title": "Electrician in San Jose, CA | Silicon Valley Electrical Services", "meta_description": "Licensed electricians serving San Jose and Silicon Valley. EV charger installation, panel upgrades, smart home wiring, and emergency service. Call now.", "focus_keyword": "electrician san jose" },
+    { "slug": "/electrician/san-francisco-ca/", "seo_title": "Electrician in San Francisco, CA | Victorian Rewiring & Electrical Services", "meta_description": "Licensed electricians serving San Francisco. Victorian rewiring, panel upgrades, EV charger installation, and emergency electrical service. Call today.", "focus_keyword": "electrician san francisco" },
+    { "slug": "/electrician/sacramento-ca/", "seo_title": "Electrician in Sacramento, CA | Residential & Commercial Electrical", "meta_description": "Licensed electricians serving Sacramento, CA. Panel upgrades, emergency service, EV charger installation, and residential electrical repairs. Call now.", "focus_keyword": "electrician sacramento" },
+    { "slug": "/electrician/long-beach-ca/", "seo_title": "Electrician in Long Beach, CA | Licensed Electrical Services", "meta_description": "Licensed electricians serving Long Beach, CA. Emergency service, panel upgrades, rewiring, EV charger installation, and coastal electrical repairs. Call now.", "focus_keyword": "electrician long beach" },
+    { "slug": "/electrician/anaheim-ca/", "seo_title": "Electrician in Anaheim, CA | Orange County Electrical Services", "meta_description": "Licensed electricians serving Anaheim and Orange County. Panel upgrades, EV charger installation, emergency service, and commercial electrical. Call today.", "focus_keyword": "electrician anaheim" },
+    { "slug": "/electrician/irvine-ca/", "seo_title": "Electrician in Irvine, CA | Smart Home & EV Charger Installation", "meta_description": "Licensed electricians serving Irvine, CA. EV charger installation, smart home wiring, panel upgrades, and commercial electrical. Call for service.", "focus_keyword": "electrician irvine" },
+    { "slug": "/electrician/fresno-ca/", "seo_title": "Electrician in Fresno, CA | Central Valley Electrical Services", "meta_description": "Licensed electricians serving Fresno and the Central Valley. Panel upgrades, emergency service, HVAC circuits, and residential electrical repairs. Call now.", "focus_keyword": "electrician fresno" },
+    { "slug": "/electrician/oakland-ca/", "seo_title": "Electrician in Oakland, CA | East Bay Electrical Services", "meta_description": "Licensed electricians serving Oakland and the East Bay. Victorian rewiring, panel upgrades, EV charger installation, and emergency electrical service. Call today.", "focus_keyword": "electrician oakland" },
+    { "slug": "/electrician/bakersfield-ca/", "seo_title": "Electrician in Bakersfield, CA | Kern County Electrical Services", "meta_description": "Licensed electricians serving Bakersfield and Kern County. Panel upgrades, emergency service, new construction wiring, and HVAC electrical circuits. Call now.", "focus_keyword": "electrician bakersfield" },
+    { "slug": "/electrician/riverside-ca/", "seo_title": "Electrician in Riverside, CA | Inland Empire Electrical Services", "meta_description": "Licensed electricians serving Riverside and the Inland Empire. Panel upgrades, emergency service, rewiring, and residential electrical repairs. Call today.", "focus_keyword": "electrician riverside" },
+    { "slug": "/electrician/stockton-ca/", "seo_title": "Electrician in Stockton, CA | San Joaquin Valley Electrical Services", "meta_description": "Licensed electricians serving Stockton and San Joaquin County. Panel upgrades, emergency service, new construction wiring, and residential repairs. Call now.", "focus_keyword": "electrician stockton" },
+    { "slug": "/electrician/santa-ana-ca/", "seo_title": "Electrician in Santa Ana, CA | Orange County Electrical Services", "meta_description": "Licensed electricians serving Santa Ana and Orange County. Panel upgrades, emergency service, rewiring, and commercial electrical work. Call today.", "focus_keyword": "electrician santa ana" }
+  ],
+
+  "blog": [
+    { "slug": "/resources/circuit-breaker-keeps-tripping/", "seo_title": "Circuit Breaker Keeps Tripping? Here's What to Do | iElectrician", "meta_description": "Learn why your circuit breaker keeps tripping and when to call a licensed electrician. Common causes, DIY checks, and professional solutions for California homes.", "focus_keyword": "circuit breaker keeps tripping" },
+    { "slug": "/resources/ev-charger-installation-cost-california/", "seo_title": "EV Charger Installation Cost in California (2025 Guide) | iElectrician", "meta_description": "How much does EV charger installation cost in California? Complete guide to Level 2 home charger costs, permits, rebates, and what affects your installation price.", "focus_keyword": "ev charger installation cost california" },
+    { "slug": "/resources/warning-signs-electrical-inspection/", "seo_title": "7 Warning Signs You Need an Electrical Inspection | iElectrician", "meta_description": "Don't ignore these 7 warning signs your California home needs a professional electrical inspection. Flickering lights, warm outlets, burning smells, and more.", "focus_keyword": "warning signs electrical inspection" },
+    { "slug": "/resources/200-amp-panel-upgrade-guide/", "seo_title": "200 Amp Panel Upgrade Guide for California Homes | iElectrician", "meta_description": "Everything California homeowners need to know about upgrading to a 200-amp electrical panel. Costs, process, permits, and when you need an upgrade.", "focus_keyword": "200 amp panel upgrade" }
+  ]
+}
