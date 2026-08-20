@@ -8,6 +8,8 @@ import ServiceCard from "@/components/ServiceCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
+import HeroImage from "@/components/HeroImage";
+import ProjectGallery from "@/components/ProjectGallery";
 
 const homeFaqs = [
   {
@@ -66,45 +68,50 @@ export default function HomePage() {
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-[var(--accent)] blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-[var(--accent)] mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent)] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent)]" />
-              </span>
-              24/7 Emergency Service Available
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-[var(--accent)] mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent)] opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent)]" />
+                </span>
+                24/7 Emergency Service Available
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+                Licensed Electricians{" "}
+                <span className="text-[var(--accent)]">Across California</span>
+              </h1>
+
+              <p className="text-lg sm:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">
+                Professional residential and commercial electrical services.
+                From emergency repairs to panel upgrades and EV charger
+                installations — trusted electricians serving California
+                homeowners and businesses.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={getPhoneLink()}
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-8 py-4 text-base font-semibold text-[var(--navy)] transition-all hover:bg-[var(--accent-hover)] shadow-lg hover:shadow-xl"
+                  data-event="hero-call-click"
+                >
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  {business.ctaPrimary} — {business.phone}
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/10"
+                  data-event="hero-request-service"
+                >
+                  {business.ctaSecondary}
+                </Link>
+              </div>
             </div>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
-              Licensed Electricians{" "}
-              <span className="text-[var(--accent)]">Across California</span>
-            </h1>
-
-            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed">
-              Professional residential and commercial electrical services.
-              From emergency repairs to panel upgrades and EV charger
-              installations — trusted electricians serving California
-              homeowners and businesses.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={getPhoneLink()}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--accent)] px-8 py-4 text-base font-semibold text-[var(--navy)] transition-all hover:bg-[var(--accent-hover)] shadow-lg hover:shadow-xl"
-                data-event="hero-call-click"
-              >
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                {business.ctaPrimary} — {business.phone}
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/10"
-                data-event="hero-request-service"
-              >
-                {business.ctaSecondary}
-              </Link>
+            <div className="hidden lg:block">
+              <HeroImage />
             </div>
           </div>
         </div>
@@ -426,6 +433,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <ProjectGallery />
 
       <ProcessSteps />
 

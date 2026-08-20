@@ -139,25 +139,52 @@ export default function ResourcesPage() {
                 </h2>
                 <p className="text-gray-600 mb-6">{category.description}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {category.articles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
-                    >
-                      <div className="text-xs font-medium text-[var(--accent-dark)] uppercase tracking-wide mb-3">
-                        {category.name}
+                  {category.articles.map((article) => {
+                    const hasPage = [
+                      "circuit-breaker-keeps-tripping",
+                      "ev-charger-installation-cost-california",
+                      "warning-signs-electrical-inspection",
+                      "200-amp-panel-upgrade-guide",
+                    ].includes(article.slug);
+                    const inner = (
+                      <>
+                        <div className="text-xs font-medium text-[var(--accent-dark)] uppercase tracking-wide mb-3">
+                          {category.name}
+                        </div>
+                        <h3 className={`text-base font-semibold text-[var(--navy)] mb-2 leading-snug ${hasPage ? "group-hover:text-[var(--accent-dark)] transition-colors" : ""}`}>
+                          {article.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                          {article.description}
+                        </p>
+                        {hasPage ? (
+                          <span className="text-sm font-medium text-[var(--accent-dark)]">
+                            Read article →
+                          </span>
+                        ) : (
+                          <span className="text-sm text-gray-400 italic">
+                            Coming soon
+                          </span>
+                        )}
+                      </>
+                    );
+                    return hasPage ? (
+                      <Link
+                        key={article.slug}
+                        href={`/resources/${article.slug}`}
+                        className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm group transition-all hover:shadow-md hover:border-[var(--accent)]/30"
+                      >
+                        {inner}
+                      </Link>
+                    ) : (
+                      <div
+                        key={article.slug}
+                        className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                      >
+                        {inner}
                       </div>
-                      <h3 className="text-base font-semibold text-[var(--navy)] mb-2 leading-snug">
-                        {article.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                        {article.description}
-                      </p>
-                      <span className="text-sm text-gray-400 italic">
-                        Coming soon
-                      </span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             ))}

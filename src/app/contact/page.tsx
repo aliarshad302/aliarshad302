@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { business } from "@/config/business";
 import { getPhoneLink } from "@/lib/utils";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import LeadForm from "@/components/LeadForm";
+import LeadSmartForm from "@/components/LeadSmartForm";
 
 export const metadata: Metadata = {
   title: "Contact Us | Request Electrical Service in California",
@@ -138,7 +138,7 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <LeadForm source="contact-page" />
+              <LeadSmartForm />
             </div>
           </div>
         </div>
