@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { business } from "@/config/business";
 import { getPhoneLink, generateFAQSchema } from "@/lib/utils";
+import { generateCityArticles } from "@/config/city-articles-generator";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
 import FAQ from "@/components/FAQ";
@@ -1524,7 +1525,9 @@ const articles: Record<string, ArticleData> = {
   },
 };
 
-const allArticles = Object.values(articles);
+const cityArticles = generateCityArticles();
+const allArticlesMap = { ...articles, ...cityArticles };
+const allArticles = Object.values(allArticlesMap);
 
 export function generateStaticParams() {
   return allArticles.map((a) => ({ slug: a.slug }));
@@ -1536,7 +1539,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = articles[slug];
+  const article = allArticlesMap[slug];
   if (!article) return {};
   return {
     title: article.metaTitle,
@@ -1551,11 +1554,11 @@ export default async function ResourceArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = articles[slug];
+  const article = allArticlesMap[slug];
   if (!article) notFound();
 
   const relatedArticles = article.relatedSlugs
-    .map((s) => articles[s])
+    .map((s) => allArticlesMap[s])
     .filter(Boolean);
 
   return (

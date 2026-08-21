@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTASection from "@/components/CTASection";
+import { getCityArticleListings, getCityArticleSlugs } from "@/config/city-articles-generator";
 
 export const metadata: Metadata = {
   title: "Electrical Resources & Guides | Homeowner Education",
@@ -122,6 +123,18 @@ const categories = [
           "Step-by-step guide to becoming a licensed electrician in Los Angeles: apprenticeship programs, certification, licensing, and career paths.",
         slug: "how-to-become-an-electrician-in-los-angeles",
       },
+      ...getCityArticleListings().flatMap((city) => [
+        {
+          title: city.salaryTitle,
+          description: city.salaryDescription,
+          slug: city.salarySlug,
+        },
+        {
+          title: city.careerTitle,
+          description: city.careerDescription,
+          slug: city.careerSlug,
+        },
+      ]),
       {
         title: "What Is a Residential Electrician?",
         description:
@@ -201,6 +214,7 @@ export default function ResourcesPage() {
                       "what-does-an-electrician-do",
                       "how-to-choose-a-residential-electrician",
                       "how-much-does-a-residential-electrician-cost",
+                      ...getCityArticleSlugs(),
                     ].includes(article.slug);
                     const inner = (
                       <>
