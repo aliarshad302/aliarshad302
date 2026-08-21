@@ -105,6 +105,56 @@ const categories = [
       },
     ],
   },
+  {
+    name: "Electrician Careers",
+    description:
+      "Guides about electrician salaries, career paths, licensing requirements, and how to get started in the trade in California.",
+    articles: [
+      {
+        title: "How Much Does an Electrician Make in Los Angeles?",
+        description:
+          "Electricians in Los Angeles earn $55,000 to $100,000+ per year depending on experience, license type, and specialty. Full salary breakdown by level.",
+        slug: "how-much-does-an-electrician-make-in-los-angeles",
+      },
+      {
+        title: "How to Become an Electrician in Los Angeles",
+        description:
+          "Step-by-step guide to becoming a licensed electrician in Los Angeles: apprenticeship programs, certification, licensing, and career paths.",
+        slug: "how-to-become-an-electrician-in-los-angeles",
+      },
+      {
+        title: "What Is a Residential Electrician?",
+        description:
+          "A residential electrician specializes in home electrical systems. Learn what they do, how they differ from commercial electricians, and when to call one.",
+        slug: "what-is-a-residential-electrician",
+      },
+      {
+        title: "What Does an Electrician Do?",
+        description:
+          "Electricians install, repair, and maintain electrical systems. Learn about their daily work, types of electricians, tools they use, and why they matter.",
+        slug: "what-does-an-electrician-do",
+      },
+    ],
+  },
+  {
+    name: "Hiring an Electrician",
+    description:
+      "Guides to help California homeowners find, evaluate, and hire the right licensed electrician for their project.",
+    articles: [
+      {
+        title: "How to Choose a Residential Electrician",
+        description:
+          "A 7-point checklist for choosing the right residential electrician: license, insurance, reviews, estimates, permits, warranties, and communication.",
+        slug: "how-to-choose-a-residential-electrician",
+      },
+      {
+        title: "How Much Does a Residential Electrician Cost?",
+        description:
+          "Residential electricians in California charge $75-$150/hour. Complete pricing guide for outlets, panels, wiring, lighting, and specialty services.",
+        slug: "how-much-does-a-residential-electrician-cost",
+      },
+    ],
+  },
 ];
 
 export default function ResourcesPage() {
@@ -145,6 +195,12 @@ export default function ResourcesPage() {
                       "ev-charger-installation-cost-california",
                       "warning-signs-electrical-inspection",
                       "200-amp-panel-upgrade-guide",
+                      "how-much-does-an-electrician-make-in-los-angeles",
+                      "how-to-become-an-electrician-in-los-angeles",
+                      "what-is-a-residential-electrician",
+                      "what-does-an-electrician-do",
+                      "how-to-choose-a-residential-electrician",
+                      "how-much-does-a-residential-electrician-cost",
                     ].includes(article.slug);
                     const inner = (
                       <>
