@@ -171,7 +171,7 @@ export default async function CityPage({
                   {topServices.map((service) => (
                     <Link
                       key={service.slug}
-                      href={`/services/${service.slug}`}
+                      href={`/electrician/${city.slug}/${service.slug}`}
                       className="flex items-center gap-3 rounded-xl border border-gray-200 p-4 hover:shadow-sm hover:border-[var(--accent)]/30 transition-all"
                     >
                       <span className="text-2xl">{service.icon}</span>

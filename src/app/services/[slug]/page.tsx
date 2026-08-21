@@ -345,7 +345,7 @@ export default async function ServiceDetailPage({
                   {cities.slice(0, 12).map((city) => (
                     <Link
                       key={city.slug}
-                      href={`/electrician/${city.slug}`}
+                      href={`/electrician/${city.slug}/${service.slug}`}
                       className="flex items-center gap-2 rounded-lg border border-gray-200 p-3 text-sm text-gray-700 hover:border-[var(--accent)]/30 hover:text-[var(--navy)] transition-colors"
                     >
                       <svg className="h-4 w-4 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
