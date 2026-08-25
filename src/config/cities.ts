@@ -1,20 +1,7 @@
-export interface CityData {
-  slug: string;
-  name: string;
-  state: string;
-  stateAbbr: string;
-  region: string;
-  county: string;
-  population: string;
-  description: string;
-  localInfo: string;
-  commonIssues: string[];
-  neighborhoods: string[];
-  nearbyAreas: string[];
-  faqs: { question: string; answer: string }[];
-  metaTitle: string;
-  metaDescription: string;
-}
+import type { CityData } from "./cities-types";
+import { generateAllCities } from "./city-page-generator";
+
+export type { CityData } from "./cities-types";
 
 export const regions = [
   {
@@ -49,7 +36,7 @@ export const regions = [
   },
 ];
 
-export const cities: CityData[] = [
+const handwrittenCities: CityData[] = [
   {
     slug: "los-angeles-ca",
     name: "Los Angeles",
@@ -879,6 +866,8 @@ export const cities: CityData[] = [
       "Licensed electricians serving Santa Ana and Orange County. Panel upgrades, emergency service, rewiring, and commercial electrical work. Call today.",
   },
 ];
+
+export const cities = generateAllCities(handwrittenCities);
 
 export function getCityBySlug(slug: string): CityData | undefined {
   return cities.find((c) => c.slug === slug);
