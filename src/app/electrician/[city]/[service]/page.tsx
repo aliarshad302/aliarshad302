@@ -74,7 +74,14 @@ function getServiceIntro(serviceName: string, cityName: string, county: string):
 }
 
 function getWhyLocal(serviceName: string, cityName: string, county: string, region: string): string {
-  return `When you need ${serviceName.toLowerCase()} in ${cityName}, choosing a local electrician matters. Our electricians are familiar with ${cityName}'s building codes, common electrical issues in ${region} homes, and the permitting requirements in ${county}. We provide upfront pricing, licensed and insured service, and stand behind our work.`;
+  const regionWhyLocal: Record<string, string> = {
+    "Southern California": `When you need ${serviceName.toLowerCase()} in ${cityName}, choosing a local electrician means faster response times and knowledge of Southern California's building codes. Our electricians understand the electrical demands of ${county} properties — from air conditioning loads to pool and spa equipment — and handle all local permitting. We provide upfront pricing, licensed and insured service, and stand behind every job.`,
+    "Bay Area": `Choosing a local Bay Area electrician for ${serviceName.toLowerCase()} in ${cityName} means working with professionals who know the region's mix of older and modern homes. Our electricians are familiar with ${county}'s permitting process, common wiring issues in Bay Area properties, and the standards Bay Area homeowners expect. Licensed, insured, with upfront pricing on every project.`,
+    "Central Valley": `For ${serviceName.toLowerCase()} in ${cityName}, a local electrician understands what Central Valley properties need. Our electricians know the electrical demands that ${county}'s climate puts on homes — heavy air conditioning loads, HVAC circuits, and panels that need to handle peak summer draw. We handle all ${county} permits, provide upfront pricing, and are licensed and insured.`,
+    "Central Coast": `${cityName} property owners choosing a local electrician for ${serviceName.toLowerCase()} get professionals who understand Central Coast conditions. Our electricians know how ${county}'s coastal environment affects electrical systems and are familiar with local permitting requirements. We provide licensed, insured service with upfront pricing on every project.`,
+    "Northern California": `For ${serviceName.toLowerCase()} in ${cityName}, our local electricians understand Northern California's unique challenges — from PSPS preparedness to storm-related repairs. We are familiar with ${county}'s building codes and permitting requirements, providing licensed, insured service with upfront pricing throughout the region.`,
+  };
+  return regionWhyLocal[region] || regionWhyLocal["Southern California"];
 }
 
 function getCityServiceFaqs(
@@ -82,9 +89,10 @@ function getCityServiceFaqs(
   serviceShortName: string,
   cityName: string,
   stateAbbr: string,
-  county: string
+  county: string,
+  region: string
 ): { question: string; answer: string }[] {
-  return [
+  const baseFaqs = [
     {
       question: `How much does ${serviceName.toLowerCase()} cost in ${cityName}?`,
       answer: `${serviceName} costs in ${cityName} vary depending on the scope of work, materials needed, and accessibility. Contact us for a free estimate — our licensed electricians provide upfront pricing before any work begins.`,
@@ -98,6 +106,31 @@ function getCityServiceFaqs(
       answer: `We offer prompt scheduling for ${serviceName.toLowerCase()} in ${cityName} and throughout ${county}. Emergency services are available 24/7. For non-emergency projects, we typically schedule within a few business days.`,
     },
   ];
+
+  const regionFaq: Record<string, { question: string; answer: string }> = {
+    "Southern California": {
+      question: `Are your electricians licensed to work in ${cityName}, ${stateAbbr}?`,
+      answer: `Yes. All iElectrician electricians are licensed by the California Contractors State License Board and insured to perform electrical work throughout ${cityName} and ${county}. We carry full liability and workers' compensation insurance.`,
+    },
+    "Bay Area": {
+      question: `Can you work on older Bay Area homes in ${cityName}?`,
+      answer: `Yes. Our electricians have experience with the Bay Area's diverse housing stock, including older homes in ${cityName} and ${county} that may have outdated wiring or undersized panels. We bring these systems up to current code standards safely.`,
+    },
+    "Central Valley": {
+      question: `Do you offer ${serviceShortName.toLowerCase()} for Central Valley businesses in ${cityName}?`,
+      answer: `Yes. We provide commercial ${serviceName.toLowerCase()} for businesses throughout ${cityName} and ${county}, including retail, office, agricultural, and industrial properties across the Central Valley.`,
+    },
+    "Central Coast": {
+      question: `Do you use weather-rated materials for work in ${cityName}?`,
+      answer: `For outdoor and exposed installations in ${cityName}, we use components rated for the Central Coast's coastal environment. This includes corrosion-resistant panels, weather-rated outlets, and outdoor fixtures designed for ${county}'s maritime conditions.`,
+    },
+    "Northern California": {
+      question: `Can you help prepare my ${cityName} home for PSPS events?`,
+      answer: `Yes. We install standby generators, transfer switches, and backup power systems for ${cityName} and ${county} homeowners who want reliable power during public safety power shutoffs and other Northern California outage events.`,
+    },
+  };
+
+  return [...baseFaqs, regionFaq[region] || regionFaq["Southern California"]];
 }
 
 export default async function CityServicePage({
@@ -113,14 +146,31 @@ export default async function CityServicePage({
   const custom = cityServiceContent[city.slug]?.[service.slug];
   const intro = custom?.intro || getServiceIntro(service.name, city.name, city.county);
   const whyLocal = custom?.whyLocal || getWhyLocal(service.name, city.name, city.county, city.region);
-  const faqs = custom?.faqs || getCityServiceFaqs(service.name, service.shortName, city.name, city.stateAbbr, city.county);
+  const faqs = custom?.faqs || getCityServiceFaqs(service.name, service.shortName, city.name, city.stateAbbr, city.county, city.region);
 
-  const otherServicesInCity = services
-    .filter((s) => s.slug !== service.slug)
-    .slice(0, 8);
-  const otherCitiesForService = cities
-    .filter((c) => c.slug !== city.slug)
-    .slice(0, 8);
+  const allOtherServices = services.filter((s) => s.slug !== service.slug);
+  const svcOffset = city.name.length % allOtherServices.length;
+  const otherServicesInCity = [
+    ...allOtherServices.slice(svcOffset),
+    ...allOtherServices.slice(0, svcOffset),
+  ].slice(0, 8);
+
+  const sameRegionCities = cities.filter(
+    (c) => c.slug !== city.slug && c.region === city.region
+  );
+  const cityOffset = (city.name.charCodeAt(0) + city.name.length) % Math.max(1, sameRegionCities.length);
+  const rotatedRegion = [
+    ...sameRegionCities.slice(cityOffset),
+    ...sameRegionCities.slice(0, cityOffset),
+  ];
+  const otherCitiesForService = rotatedRegion.length >= 8
+    ? rotatedRegion.slice(0, 8)
+    : [
+        ...rotatedRegion,
+        ...cities
+          .filter((c) => c.slug !== city.slug && c.region !== city.region)
+          .slice(0, 8 - rotatedRegion.length),
+      ];
   const isEmergency = service.category === "emergency";
 
   return (

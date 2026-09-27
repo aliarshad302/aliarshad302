@@ -39,10 +39,11 @@ export default async function CityPage({
   const city = getCityBySlug(slug);
   if (!city) notFound();
 
-  const topServices = services.slice(0, 8);
-  const residentialServices = services.filter(
-    (s) => s.category === "residential"
-  ).slice(0, 6);
+  const svcOffset = city.name.length % services.length;
+  const topServices = [
+    ...services.slice(svcOffset),
+    ...services.slice(0, svcOffset),
+  ].slice(0, 8);
   const emergencyServices = services.filter(
     (s) => s.category === "emergency"
   );
